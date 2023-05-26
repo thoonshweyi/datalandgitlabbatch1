@@ -1,0 +1,28 @@
+*must have Git platform
+=>URL   
+
+
+=>Git Version Check
+window - cmd ->
+git --version
+git version
+
+=>Git?
+version control system ( free and open source )
+system thats's recording every changes to our files
+recall any specific version
+it's allow many people to easily collaborate a project
+
+=> Git vs Github/GitLab
+Git - git is a tool for manage github/lab repositories (can use without github/lab)
+    - store versions in project history
+Github/lab - place where the source coe exists (remotely and manage by git)
+            - online service that hosts our project
+            - share our codes to other developers
+            - download / collaborate
+
+=>Important Notes
+Git - Create repository ( Every Project )
+    - Create Branch (Every Feature)
+    - No need to connect remote Repo 
+

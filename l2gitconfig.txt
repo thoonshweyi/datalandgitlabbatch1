@@ -1,0 +1,34 @@
+=>Git Version Check
+.window -> cmd ->
+git --version
+get version
+
+=>Upgrade Git (For Ubuntu)
+.For linux
+
+sudo apt remove git
+sudo add -apt-repository ppa:git-core/ppa -y
+sudo apt-get update
+sudo apt-get install git -y
+
+=>User Config ( name / email)
+git config --global user.name "thoonshweyikyaww"
+git config --global user.email "thoonshweyikyaww@gmail.com"
+git config --local user.name "tsykk"
+git config --local user.email "tsykk@gmail.com"
+
+git config --global user.name
+git config --global user.email
+git config --local user.email
+git config --local user.email
+
+git config --global user.name "thoonshweyikyaw"
+git config --global user.email "thoonshweyikyaw@gmail.com"
+
+=>List all Variables in config file
+git config -l
+git config -l --show-origin
+
+-l(list)
+
+30GT

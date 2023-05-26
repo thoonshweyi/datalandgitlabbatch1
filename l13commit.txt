@@ -1,0 +1,281 @@
+=>Commit
+
+mkdir lesson13
+git init
+
+touch file0.txt
+
+vim file0.txt
+Edit : write down
+1.this is first line
+2.this is second line
+
+cat file0.txt
+(or)
+more file0.txt
+
+git add *
+git commit -m "file 0 added"
+
+git status
+git branch
+git log --all --oneline
+
+touch file1.txt
+touch file2.txt
+
+vim file1.txt
+Edit : write down
+1.this is first post
+2.this is second post
+
+vim file2.txt
+Edit : write down
+1.this is first comment
+2.this is second comment
+
+git add *
+git commit -m "file 1 2 added"
+
+git status
+git branch
+git log --all --oneline
+
+vim file0.txt
+Edit : write down
+3.this is third line
+4.this is fourth line
+
+vim file2.txt
+Edit : write down
+3.this is third comment
+4.this is fourth comment
+
+git status
+git add *
+git commit -m "M 0 2"
+
+git status
+git branch
+git log --all --oneline
+
+ls
+
+cat file0.txt
+cat file1.txt
+cat file2.txt
+
+git status
+git branch
+
+git log --all --oneline
+
+git checkout 0fba066
+(file 0 added)
+
+ls
+cat file0.txt
+git log --all --oneline
+
+git status
+git branch
+
+git checkout 223d6a3
+(file 1 2 added)
+
+ls
+(file0.txt,file1.txt,file2.txt)
+cat file0.txt
+cat file1.txt
+cat file2.txt
+
+git log --all oneline
+
+git status
+git branch
+
+git checkout main
+
+touch file3.txt
+
+vim file3.txt
+Edit : write down
+1.this is first react
+2.this is second react
+
+git status
+
+git add . 
+
+git status
+
+cat file3.txt
+
+git restore --staged file3.txt
+
+git status
+
+cat file3.txt
+
+git add .
+
+git status
+
+git commit -m "file 3 added"
+
+vim file3.txt
+Edit : write down
+3.this is third react
+4.this is fourth react
+
+git status
+
+git add .
+
+git status
+
+cat file3.txt
+
+git status
+
+git restore --staged file3.txt
+
+git status
+
+git restore file3.txt
+
+vim file3.txt
+Edit : write down
+3.this is third react
+4.this is fourth react
+
+git status
+
+git add .
+
+gt status
+
+cat file3.txt
+
+git status
+
+git reset HEAD file3.txt
+
+git status
+
+cat file3.txt
+
+git add .
+
+git commit -m "M f3"
+
+git status
+
+cat file3.txt
+
+git log --all --oneline
+
+git status
+
+git reset 9d3653f --soft
+(file 3 added)
+(--soft already staged area = git add .)
+
+git status
+
+cat file3.txt
+
+git log --all --oneline
+
+git restore --staged file3.txt
+
+git status
+
+git add .
+
+git status
+
+git commit -m "M f3 again"
+
+git status
+
+cat file3.txt
+
+git log --all --oneline
+
+git show
+
+git reset 223d6a3
+(file 1 2 added )
+
+git status
+
+ls
+
+cat file3.txt
+
+git commit -m "A f3 again"
+
+git status
+
+cat file3.txt
+
+git log --all --oneline
+
+git show
+(*show very last commit)
+
+git reset 57ab0c0 --soft 
+(M 0 2)
+
+git status
+
+ls
+
+cat file3.txt
+
+git commit -m "A f3 again"
+
+git status
+
+cat file3.txt
+
+git log --all --oneline
+
+git show
+
+git reset 223d6a3 --mixed 
+(file 1 2 added)
+(--mixed = unstaged area)
+
+git status
+
+ls
+
+git log --all --oneline
+
+git add .
+
+git commit -m "M 0 2 A 3" 
+
+git status
+
+git log --all --oneline
+
+cat file3.txt
+
+=>git reflog
+
+git reflog
+
+git reset --hard f228c80
+(M f3)
+
+ls
+
+git log --all --oneline
+
+cat file3.txt
+
+
+ 

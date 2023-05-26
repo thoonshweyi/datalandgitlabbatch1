@@ -1,0 +1,52 @@
+=>Git Ignore
+
+mkdir lesson4
+cd lesson4
+
+git init
+
+git status
+
+ls -a
+
+touch .gitignore
+    filename.fileformat
+
+ls -la
+
+for linux = vim .gitignore
+for windows = .gitignore --edit
+
+# Compiled Sources #
+#################################
+*.com
+*.class
+*.dll
+*.exe
+*.xlsx
+
+# Packages #
+#################################
+*.zip
+*.rar
+*.tar
+*.7zip
+*.dmg
+*.iso
+
+# Images Sources #
+#################################
+*.jpeg
+*.png
+*.ico
+
+esc > :wq
+
+touch country.txt
+touch phone.txt
+touch computer.txt
+touch user.jpg
+touch favicon.ico
+touch application.exe
+touch database.xlsx
+touch plugin.zip

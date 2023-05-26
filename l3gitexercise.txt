@@ -1,0 +1,136 @@
+
+
+=>Set Local user name and email
+git config --local user.name "tsykk"
+git config --local user.email "tsykk@gmail.com"
+
+git config --local user.name
+git config --local user.email
+
+=>Check List all Variables
+git config -l
+git config -l --show-origin
+
+=>Remove List All Variables
+git config --local --unset user.name
+git config --local --unset user.email
+
+git config --local user.name
+git config --local user.email
+
+git config -l --show-origin
+
+
+git config --local --unset user.name
+git config --local --unset user.email
+
+git init lesson1
+cd lesson1
+
+=>Check Folder Dir
+window->
+dir
+
+linux->
+ls 
+ls -la
+
+git status
+
+=>Set Default Branch
+git confit--global init.defaultBranch main
+
+vim lesson1.txt
+i > 
+esc :wq
+
+window newfile
+
+=>Check Folder dir
+for window = dir
+for linux = ls
+for linux = ls -la (or) ls -al
+
+git status
+
+git add lesson1.txt
+
+git status
+
+git commit -m "adding lesson1.txt"
+
+git status
+
+git log
+
+//
+a               b               c               d
+working  dir    staging area    local repo      remote repo
+            ->
+            git add
+                            ->
+                            git commit     ->
+                                           git push          
+
+
+=>Creae New Branch
+git branch new-feature
+
+=>Check All Branch
+git branch
+
+git log
+
+for linux = vim lesson1.txt
+for linux = i > esc > :wq
+
+git status
+
+vim lesson2.txt
+
+for linux = vim lesson2.txt
+for linux = i > esc > :wq
+
+git status
+
+=>Change Default Branch
+git checkout new-feature
+
+git status
+
+git add lesson1.txt
+
+git status
+
+git commit -m "add 2 countries lesson1.txt";
+
+git status
+
+git log
+
+git add lesson2.txt
+
+git status
+
+git commit -m "adding lesson2.txt"
+
+git status
+
+ls
+
+cat lesson1.txt
+cat lesson2.txt
+
+git checkout main
+git checkout master
+
+git status
+
+ls
+
+cat lesson1.txt
+
+git checkout new-feature
+
+ls
+

@@ -1,0 +1,1442 @@
+=>Git Version Check
+    window -> 
+        cmd > git --version
+              git version
+
+=>User Config ( name / email)
+    =>Set Global User (name / email)
+
+        git config --global user.name "thoonshweyikyaww"
+        git config --global user.email "thoonshweyikyaww@gmail.com"
+
+        -set for all repositories
+
+    =>Set Local User (name / email)
+
+        git config --local user.name "tsykk"
+        git config --local user.email "tsykk@gmail.com"
+
+        -set for a single repositories
+        * can only set if a repositories exists
+    
+    =>Get Global User (name / email)
+        git config --global user.name
+        git config --global user.email
+
+    =>Get Local User (name / email)
+        git config --local user.email
+        git config --local user.email
+
+    =>Exercises (Global User)
+
+        git config --global user.name "thoonshweyikyaww"
+        git config --global user.email "thoonshweyikyaww@gmail.com"
+
+        git config --global user.name
+        git config --global user.email
+
+        git config --global user.name "thoonshweyikyaw"
+        git config --global user.email "thoonshweyikyaw@gmail.com" 
+        (overwrite wrong name/email)
+
+        git config --global user.name
+        git config --global user.email
+
+    =>Exercises (Local User)
+        =>Creat Repository
+            Mehod1 (Terminal)
+                cmd > cd > ..>reponame
+                git init
+            
+            Method2 (File Path)
+                go to repo folder
+                filepathbar>selectall>cmd
+                git init
+            Method3 (Git)
+                gitbatchhere>
+                git init
+
+            git init roponame
+            * if the user is parent folder and create childern repo folder 
+        
+
+        git config --local user.name "tsykk"
+        git config --local user.email "tsykk@gmail.com"
+
+        git config --local user.name
+        git config --local user.email
+
+        
+
+        =>Remove List All Variables
+            git config --local --unset user.name
+            git config --local --unset user.email
+
+            git config --local user.name
+            git config --local user.email
+
+            git config -l --show-origin
+
+            // may be global
+            git config --local --unset user.name
+            git config --local --unset user.email
+
+    =>Check List all Variables
+        git config -l   (show all variables)
+
+        git config -l --show-origin     (show all variables with its file path)
+
+    =>Set Default Branch
+        git confit--global init.defaultBranch main (set default branch to main)
+        
+        git status (On branch main)
+
+
+=>Git concept
+a               b               c               d
+working  dir    staging area    local repo      remote repo
+            ->
+            git add
+                            ->
+                            git commit     ->
+                                           git push     
+
+=>Git Branch
+    =Create New Folder
+        mkdir foldername
+
+    =Go To Path
+        cd foldername
+    
+    =Check Folder Dir
+            window->
+                    dir
+
+            linux->
+                    ls              (not show hidden files)
+                    ls -la          (show all hidden files)
+
+    =>Exercise1 Branch
+    
+        mkdidr lesson1
+
+        cd lesson1
+
+        git init
+
+        ls
+
+        ls -la
+        (
+            ./
+            ../
+            .git/
+        )
+
+        git status
+
+        =>Create Branch
+            git branch branchname
+
+        =>Check All Branch
+            git branch                  
+
+        git status
+        git branch
+
+        git branch bugfix
+        git branch
+        (
+            *main
+            bugfix
+        )
+
+        git branch dev
+        git branch
+        
+        =>Switch Branch
+            git checkout branchname
+        
+        git checkout bugfix
+        git branch
+        git status
+
+        git checkout dev
+        git branch
+        git status
+
+        =>Create And Then Switched
+            git checkout -b branchname
+
+        git checkout -b new-feature
+        git branch
+        git status
+
+        =>Rename Branch
+            (target branch have to checkout)
+            git checkout -m branchname
+
+        git branch
+
+        git branch -m my-feature
+        git branch
+
+        git checkout bugfix
+
+        git branch -m bugerror
+        git branch
+
+        =>Delete Branch
+        (current checkout branch can't delete)
+        =Syntax
+            git branch --delete branchname
+            (or)
+            git branch -d branchname
+            (or)
+            git branch -D branchname
+
+        git branch
+
+        * error
+        git branch --delete new-feature
+        
+        git branch
+
+        git branch -d my-feature
+        git branch
+
+        *error
+        git branch -D bugerror
+
+        git branch
+
+        git checkout main
+        git branch
+
+        git branch -D bugerror
+        git branch
+
+=>Exercise2
+        mkdidr lesson2
+
+        cd lesson2
+
+        git init
+
+        git status
+
+        =Create cars file
+            linux->
+                vim cars.txt
+                i > 
+                "
+                    1.Toyota Brand
+                    2.Suzuki
+                    3.Mazda
+                    4.Ford
+                "
+                esc :wq
+
+            window->
+                New File
+                cars.txt     
+                "
+                    1.Toyota Brand
+                    2.Suzuki
+                    3.Mazda
+                    4.Ford
+                "
+                Ctrl+s
+
+        =Read File
+            ->linux
+                cat cars.txt 
+                (
+                    1.Toyota Brand
+                    2.Suzuki
+                    3.Mazda
+                    4.Ford
+                )
+
+
+        vim programming.txt
+        i > 
+        "
+            1.Java
+            2.Php
+            3.Python
+            4.Asp.net
+        "
+        esc :wq
+
+        git status
+        (    
+            On branch main
+            Untracked files:
+            cars.txt 
+            programming.txt
+
+            *red
+        )
+
+        =>Add all files to Staging Area
+            git add -A
+            (or)
+            git add *
+            (or)
+            git add .
+
+        git status
+        (
+            On branch main
+            Changes to be committed: 
+            new file: 
+            cars.txt 
+            programming.txt
+            
+            * green
+        )
+
+        git commit -m "adding cars and programming files"
+        ( 2 files changed, 8 insertions(+))
+
+        git status
+        (nothing to commit,)
+
+        =>Check Commit Histroy
+            git log
+            (
+                commit 63aa9da24e80d8386a2bac29764450ea280b4591 (HEAD -> main)
+                Author: thoonshweyikyaw <thoonshweyikyaw@gmail.com>
+                Date:   Fri Apr 28 12:34:38 2023 +0630
+
+                    adding cars and programming files
+            )
+
+        git branch new-feature1
+        git branch new-feature2
+
+        git branch 
+
+        git log
+        (
+            commit 63aa9da24e80d8386a2bac29764450ea280b4591 (HEAD -> main, new-feature2, new-feature1)
+            Author: thoonshweyikyaw <thoonshweyikyaw@gmail.com>
+            Date:   Fri Apr 28 12:34:38 2023 +0630
+
+                adding cars and programming files
+        )
+
+        git checkout new-feature1
+        git status
+
+        ls
+        (cars.txt programming.txt)
+
+
+        vim phones.txt
+        i > 
+        "
+            1.Sony
+            2.Nokia
+            3.Samsung
+            4.Mi
+        "
+        esc :wq
+
+        =Update cars files
+            Open File
+            "
+                1.Toyota Brand
+                2.Suzuki
+                3.Mazda
+                4.Ford
+                5.Hondia
+                6.Lixus
+            "
+            Ctrl+s
+
+        git status
+        (
+            On branch new-feature1
+            modified:   cars.txt
+
+            Untracked files:
+            phones.txt
+
+            *red
+        )
+
+        git add phones.txt
+
+        git status
+        (
+            On branch new-feature1
+            Changes to be committed:
+                    new file:   phones.txt
+            *green
+
+            Changes not staged for commit:
+                    modified:   cars.txt
+            *red
+        )
+
+
+        git add cars.txt
+
+        git status
+        (
+                On branch new-feature1
+            Changes to be committed:
+                    modified:   cars.txt
+                    new file:   phones.txt
+        )
+
+        git commit -m "phone added and car modifying"
+
+        git status
+
+        cat cars.txt
+        cat phones.txt
+        cat programming.txt
+
+
+        git checkout main
+        git status
+
+        ls
+        (cars.txt programming.txt)
+
+        cat cars.txt
+        (
+            1.Toyota Brand
+            2.Suzuki
+            3.Mazda
+            4.Ford
+        )
+
+        cat programming.txt
+        (
+            1.Java
+            2.Php
+            3.Python
+            4.Asp.net
+        )
+
+        git checkout new-feature1
+        git status
+
+        ls
+        (cars.txt phones.txt programming.txt)
+
+        cat cars.txt
+        (
+            1.Toyota Brand
+            2.Suzuki
+            3.Mazda
+            4.Ford
+            5.Hondia
+            6.Lixus
+        )
+
+
+        git checkout main
+
+        =>Merge complete repository to main
+            git merge new-feature1
+
+        ls
+        (cars.txt phones.txt programming.txt)
+
+
+        cat cars.txt
+        (
+            1.Toyota Brand
+            2.Suzuki
+            3.Mazda
+            4.Ford
+            5.Ford
+            6.Lixus
+        )
+
+        cat programming.txt
+        (
+            1.Java
+            2.Php
+            3.Python
+            4.Asp.net
+        )
+
+
+        cat phones.txt
+        (
+            1.Sony
+            2.Nokia
+            3.Samsung
+            4.Mi
+        )
+        
+        git log
+        (
+            commit 7cd35ffeb1ab2987421f9b0416a98dfb71ef2380 (HEAD -> main, new-feature1)
+            Author: thoonshweyikyaw <thoonshweyikyaw@gmail.com>
+            Date:   Fri Apr 28 13:39:48 2023 +0630
+
+                phone added and car modifying
+
+            commit 63aa9da24e80d8386a2bac29764450ea280b4591 (new-feature2)
+            Author: thoonshweyikyaw <thoonshweyikyaw@gmail.com>
+            Date:   Fri Apr 28 12:34:38 2023 +0630
+
+                adding cars and programming files
+        )
+
+        git checkout new-feature2
+
+        ls
+        (cars.txt programming.txt)
+
+        cat cars.txt
+        (
+            1.Toyota Brand
+            2.Suzuki
+            3.Mazda
+            4.Ford
+        )
+
+        cat programming.txt
+        (
+            1.Java
+            2.Php
+            3.Python
+            4.Asp.net
+        )
+
+=>Exercise 3 Unstage
+        mkdir lesson3
+
+        cd lesson3
+
+        git init
+  
+        vim country.txt
+        esc :wq        
+
+        vim phone.txt
+        esc :wq   
+
+        vim computer.txt
+        esc :wq 
+
+        git status
+        (
+            Untracked files:
+            
+            computer.txt
+            country.txt
+            phone.txt
+
+            *red
+        )
+
+        git add -A
+
+        git status
+        (
+            Changes to be committed:
+
+            new file:   computer.txt
+            new file:   country.txt
+            new file:   phone.txt
+
+            *green
+        )
+
+        =>Unstage files
+            git reset filename.extension
+
+            git reset filename.extention filename.extension ...
+
+        git reset computer.txt
+
+        git status
+        (
+            Changes to be committed:
+            new file:   country.txt
+            new file:   phone.txt
+
+            *green
+
+            Untracked files:
+            computer.txt
+
+            *red
+        )
+
+        git reset phone.txt
+
+        git status
+
+        git reset country.txt
+
+        git status
+        (
+            Untracked files:
+            
+            computer.txt
+            country.txt
+            phone.txt
+
+            *red
+        )
+
+        git add *
+
+        git status
+
+        git reset phone.txt
+
+        git status
+
+        git reset country.txt computer.txt
+
+        git status
+
+=>Exercse Compare Branch
+
+        mkdir lesson6
+        cd lesson6
+
+        git init
+
+        touch file1.txt
+        touch file2.txt
+
+        vim file1.txt
+        i > 
+        "
+            this is post one
+            this is post two
+            this is post three
+        "
+        esc :wq
+
+        git status
+
+        git add *
+
+        git commit -m "added file 1 2"
+
+        ls
+
+        cat file1.txt
+
+        git branch
+
+        git branch new-feature
+        git branch
+
+        git checkout new-feature
+
+        touch file3.txt
+        touch file4.txt
+
+        vim file3.txt
+        i > 
+        "
+            this is comment one
+            this is comment two
+            this is comment three
+        "
+        esc :wq
+
+        vim file4.txt
+        i > 
+        "
+            this is react one
+            this is react two
+            this is react three
+        "
+        esc :wq
+
+        vim file1.txt
+        i > 
+        "
+            this is post four
+            this is post five
+            this is post six
+        "
+        esc :wq
+
+        git status
+
+        git status -s
+
+        =>diff
+            git diff
+
+            git add *
+
+            git commit -m "M file1 A file 3 4"
+
+            git status
+
+            git branch
+
+            clear
+
+            git diff main new-feature   
+            (press "q" to quick)
+
+            clear
+
+            git diff new-feature main
+
+=>Exercise Stash
+        *hide file from the staging area
+
+        mkdir lesson7
+        cd lesson7    
+
+        git init
+        git status
+
+        touch file0.txt
+        ls
+        echo "my first project" > file0.txt
+        cat file0.txt
+
+        git status
+
+        git add file0.txt
+
+        git commit -m "added file0"
+
+        git status
+
+        touch file1.txt
+        ls
+        echo "welcome to our site" > file1.txt
+        cat file1.txt
+
+        git status
+
+        git add file1.txt
+
+        git status
+        
+        ls
+
+        git stash
+        ( stash@{0}: WIP on main: d1411a6 added file0 )
+
+        git status
+        (
+            On branch main
+            nothing to commit, working tree clean
+        )
+        ls
+        (file0.txt)
+
+        git stash list 
+
+        touch file2.txt
+        ls
+        echo "thanks for visit" > file2.txt
+        cat file2.txt
+
+        git add file2.txt
+
+        git status
+
+        ls
+
+        git stash
+
+        git status
+        ls
+        (file0.txt)
+
+        git stash list
+        (
+            stash@{0}: WIP on main: d1411a6 added file0
+            stash@{1}: WIP on main: d1411a6 added file0
+        )
+
+
+        touch file3.txt
+        ls
+        echo "please click the share button" > file3.txt
+        cat file3.txt
+
+        git status
+
+        ls
+
+        git add file3.txt
+
+        git stash
+
+        git status
+        ls
+
+        git stash list
+
+        touch file4.txt
+        ls
+        echo "please click the like button" > file4.txt
+        cat file4.txt
+
+        git status
+
+        ls
+
+        git add file4.txt
+
+        git stash
+
+        git status
+        ls
+
+        git stash list
+
+        git status
+
+
+        =>Pop a single stash state
+            
+            *preview the outcomming file in stash
+            git stash show
+            (file4.txt)
+
+            git stash pop
+            git status
+            git stash list
+            (
+                stash@{0}: WIP on main: 4af2ccb added file0
+                stash@{1}: WIP on main: 4af2ccb added file0
+                stash@{2}: WIP on main: 4af2ccb added file0
+            )
+
+            git stash pop
+            git status
+            git stash list
+
+            git stash show
+
+            git stash pop
+            git status
+            git stash list
+
+            git stash pop
+            git status
+            git stash list
+
+            git commit -m "add file 1 2 3 4"
+
+            git status
+
+            ls
+
+        =>Exercise (Stash Apply)
+                mkdir lesson8
+                cd lesson8
+                
+                git init
+
+                git status
+
+                touch file0.txt
+                ls
+                echo "my first project" > file0.txt
+                cat file0.txt
+
+                git status
+
+                git add file0.txt
+
+                git commit -m "added file0"
+
+                git status
+
+                touch file1.txt
+                ls
+                echo "welcome to our site" > file1.txt
+                cat file1.txt
+
+                git status
+
+                git add file1.txt
+
+                git status
+                
+                ls
+
+                git stash
+
+                git status
+                ls
+
+                git stash list 
+
+                touch file2.txt
+                ls
+                echo "thanks for visit" > file2.txt
+                cat file2.txt
+
+                git add file2.txt
+
+                git status
+
+                ls
+
+                git stash
+
+                git status
+                ls
+                (file0.txt)
+
+                git stash list
+                (
+                    stash@{0}: WIP on main: d1411a6 added file0
+                    stash@{1}: WIP on main: d1411a6 added file0
+                )
+
+
+                touch file3.txt
+                ls
+                echo "please click the share button" > file3.txt
+                cat file3.txt
+
+                git status
+
+                ls
+
+                git add file3.txt
+
+                git stash
+
+                git status
+                ls
+
+                git stash list
+
+                touch file4.txt
+                ls
+                echo "please click the like button" > file4.txt
+                cat file4.txt
+
+                git status
+
+                ls
+
+                git add file4.txt
+
+                git stash
+
+                git status
+                ls
+
+                git stash list
+
+                =>Apply a single stash state
+                    git stash show
+                    (file4.txt)
+
+                    git stash apply
+                    git status
+                    (
+                        On branch main
+                        Changes to be committed:
+                                new file:   file4.txt
+                    )
+                    git stash list
+                    (
+                        stash@{0}: WIP on main: f5fa216 added file0
+                        stash@{1}: WIP on main: f5fa216 added file0
+                        stash@{2}: WIP on main: f5fa216 added file0
+                        stash@{3}: WIP on main: f5fa216 added file0
+
+                    )
+
+                    git commit -m "added file4"
+                    git status
+                    ls
+
+                    *no result
+                    git stash apply
+
+                    git stash pop
+
+                    git stash show
+                    
+                    git stash apply
+
+                    git commit -m "added file 3"
+
+                    git status
+
+                    *no result
+                    git stash apply
+
+                    git stash list
+                    (
+                        stash@{0}: WIP on main: f5fa216 added file0
+                        stash@{1}: WIP on main: f5fa216 added file0
+                        stash@{2}: WIP on main: f5fa216 added file0
+                    )
+
+                    git stash pop
+
+                    git stash list
+                    (
+                        stash@{0}: WIP on main: f5fa216 added file0
+                        stash@{1}: WIP on main: f5fa216 added file0
+                    )
+                    
+                    git stash show
+
+                    git stash apply
+
+                    git commit -m "added file 2"
+
+                    git status
+
+                    ls
+
+                    =>Remove all the stash
+                        git stash clear
+                        
+                    git stash list
+
+                    
+        =>Exercise (Stash Drop)
+            mkdir lesson9
+            cd lesson8
+
+            git init
+
+            git status
+
+            touch file0.txt
+            ls
+            echo "my first project" > file0.txt
+            cat file0.txt
+
+            git status
+
+            git add file0.txt
+
+            git commit -m "added file0"
+
+            git status
+
+            touch file1.txt
+            touch file2.txt
+
+            ls
+
+            git status
+
+            git add *
+
+            git status
+
+            git stash save "added file1 2"
+
+            git status
+            ls 
+
+            git stash list
+            (
+                stash@{0}: On main: added file1 2
+            )
+
+            touch file3.txt
+            touch file4.txt
+            ls
+
+            git status
+
+            git add *
+
+            git status
+
+            ls
+
+            git stash save "added file 3 4"
+
+            git status
+
+            ls
+
+            git stash list
+
+            git stash show
+            git stash show stash@{0}
+            git stash show stash@{1}
+
+
+            =>Single Delete Stash
+                git stash drop stash@{1}
+
+                git stash list
+
+            touch file5.txt
+            touch file6.txt
+            touch file7.txt
+
+            git status
+
+            git add *
+
+            git status
+
+            ls
+
+            git stash save "added file 5 6 7"
+
+            git status
+
+            ls
+
+            git stash list
+
+            git stash show stash@{0}
+            git stash show stash@{1}
+
+            git stash show
+
+            git stash apply
+
+            git status
+
+            git commit -m "added file 5 6 7"
+
+            git status
+
+            ls
+
+            git stash list
+
+            git stash clear
+
+            git stash list
+
+=>Exercise Undochanges
+    mkdir lesson10
+    cd lesson10
+
+    git init
+
+    touch file0.txt
+    ls 
+    echo "my first project" > file0.txt
+
+    git add *
+
+    git commit -m "A file0"
+
+    git status
+
+    ls
+
+    touch file1.txt
+    touch file2.txt
+    ls
+
+    vim file1.txt
+    i > 
+    "
+        1.this is first line
+        2.this is second line
+    "
+    esc :wq
+
+    cat file1.txt
+
+    git status
+    git status -s
+
+    git add .
+
+    git commit -m "file 1 2 A"
+
+    touch file3.txt
+
+    vim file3.txt
+    i > 
+    "
+        1.this is the first expression
+        2.this is the second expression
+    "
+    esc :wq
+
+    vim file2.txt
+    i > 
+    "
+        1.this is the first comment
+        2.this is the second comment
+
+    "
+    esc :wq
+
+    cat file2.txt
+    cat file3.txt
+
+    git status 
+    git status -s
+
+    git add .
+
+    git commit -m "file 2 M file 3 A"
+
+    git status
+
+    ls
+
+    touch file5.txt
+
+    vim file0.txt
+    i > 
+    "
+        1.my first experience
+    "
+    esc :wq
+
+    cat file0.txt
+
+    ls
+
+    git log
+    git log --oneline
+
+    ls
+
+    =Remove File By OS
+        rm file3.txt
+
+        ls
+        (file0.txt file1.txt file2.txt file5.txt)
+
+    =Remove File By Git
+        git rm file1.txt
+
+        ls
+        (file0.txt file2.txt file5.txt)
+
+    =>Restore File
+        *error = by Git
+        git checkout file1.txt
+
+        *can undo = by OS
+        git checkout file3.txt
+
+        ls
+
+    git status
+
+    git add .
+
+    git status -s
+
+    git commit -m "M file0 D file1 A file5"
+
+    git status
+
+    ls
+
+    cat file0.txt
+    cat file2.txt
+    cat file3.txt
+    cat file5.txt
+
+    git log --oneline
+
+    vim file2.txt
+    i > 
+    "
+        3.this is the third comment
+        4.this is the fourth comment
+        5.this is the fifth comment
+    "
+    esc :wq
+    
+    cat file2.txt
+
+    git status
+
+    => Restore Modified File
+        git restore file2.txt
+    
+    git status
+
+    cat file2.txt
+
+    vim file2.txt
+    i > 
+    "
+        3.this is the third comment
+        4.this is the fourth comment
+        5.this is the fifth comment
+    "
+    esc :wq
+
+    git diff
+
+    git add .
+
+    git commit -m "M file2"
+
+    git status
+
+    vim file0.txt
+    i > 
+    "
+        my second project
+        my second experience
+    "
+    esc :wq
+
+    cat file0.txt
+
+
+    vim file2.txt
+    i > 
+    "
+        6.this is the sixth comment
+        7.this is the seventh comment
+        8.this is the eight comment
+    "
+    esc :wq
+
+    cat file2.txt
+
+    git status
+
+    git status -s
+
+    git add .
+
+    git status
+
+    =>Restore Stage
+
+        git restore --staged file0.txt
+
+        git status
+
+        cat file0.txt
+
+        git restore --staged file2.txt
+
+        git status
+
+        cat file2.txt
+
+        git add *
+
+        git status
+
+        git restore --staged *
+
+        git status
+
+
+    git add .
+    
+    git status
+
+    git commit -m "M file0 M file2"
+
+    git status
+
+    cat file0.txt
+    cat file2.txt
+
+    =>Git log
+        git log
+        (if log text exceed screen, can quick with 'q')
+
+        git log -3
+        (* limit the number of logs)
+
+        git log --oneline
+
+        git log --all --oneline 
+        (or)
+        git log --oneline --all
+
+    =>Undo By Commit
+        =>call file that is change in target commit
+            git checkout f4aaa6f -- file2.txt
+            (call commit "M file2")
+
+        cat file2.txt
+
+        git log --oneline
+        git log --all --oneline 
+        (
+            5f079ce (HEAD -> main) M file0 M file2
+            f4aaa6f M file2
+            436ca8c M file0 D file1 A file5
+            bded148 file 2 M file 3 A
+            7a3dc78 file 1 2 A
+            d0e682f A file0
+
+        
+             * the difference between above two command is that 
+            -> --all can show all histrory commits 
+            -> do not include --all can only show commit histrory before checkout commit
+                but later version can show all commits
+        
+        )
+
+        cat file0.txt
+        cat file2.txt
+
+
+        
+        git checkout 436ca8c -- file0.txt
+        (call commit "M file0 D file1 A file5")
+        *only file0.txt will change other changes in that commit will nont undo
+
+        cat file0.txt
+        cat file2.txt
+
+        =>call file that is not changed in target commit
+            git checkout 436ca8c file2.txt
+            (call commit "M file0 D file1 A file5")
+
+        cat file0.txt
+        cat file2.txt 
+
+        =>call all file changes at low version which do not contain any new added files
+            *error because file3 and file5 exists 
+            git checkout 7a3dc78 *
+            (call commit "file 1 2 A")
+
+            *error because file5 exists 
+            git checkout bded148 *
+            (call commit "file 2 M file 3 A")
+
+        =>call all file changes at high version which contain new add files
+            git checkout 5f079ce *
+            (call commit " M file0 M file2")
+
+        cat file2.txt
+        cat file0.txt
+        
+        =>call deleted file 
+            git checkout bded148 file1.txt
+            (call commit "file 2 M file 3 A")
+            ls
+            cat file1.txt
+
+
+
+
+
+            
+        
+            

@@ -1,0 +1,86 @@
+mkdir lesson1
+cd lesson1
+
+=Write down
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 1</title>
+        <style>
+            h1{
+                color: blue;
+            }
+            p{
+                color: steelblue;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Gitlab Lesson</h1>
+        <p>Hello, Are you ready to use Gitlab</p>
+    </body>
+</html>
+
+
+
+=>DLT Account > Github > New Repository > githublesson1 (public)
+
+=>In Terminal
+git init
+git remote add origin git@github.com:thoonshweyi/githublesson1.git
+git status
+git add index.html
+git status
+git commit -m "A index.html"
+git status
+git push -u origin main
+
+=>Github > githublesson1 >
+    ->index.html
+    ->A index.html (to view commit changes)
+    ->githublesson1 > index.html > Edit this file > 
+    ->modify inde.html            
+        "
+            p{
+                color: steelblue;
+                font-size: 30px;        
+            }
+        "
+    
+    ->Commit Changes
+    ->M from githubsite index.html
+    ->Commit Changes
+    ->index.html
+    ->M from githubsite index.html (to compare commit changes)
+
+=>In Terminal
+    git status
+    ->modify inde.html            
+        p{
+            color: skyblue;
+            font-size: 50px;
+        }
+
+    git status
+    git status -s
+    git add index.html
+    git status
+    git commit -m "M from localcomputer index.html"
+    git status
+    git push -u origin main
+    *error
+
+
+    ===Change something in index.html from github.com
+    commit from "M from githubsite index.html"
+
+    ===Change something in index.html from local public
+    git status
+    git add .
+    git status
+    git commit -m "M from local pc index.html"
+    git push -u origin main
+    **error**
+
+    git pull origin main

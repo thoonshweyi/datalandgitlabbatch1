@@ -1,0 +1,47 @@
+=>Git Merge
+
+mkdir lessongitmerge
+cd lessongitmerge
+
+git status
+
+touch file1.txt
+touch file2.txt
+ls
+
+git add .
+
+git commit -m "A file 1 2"
+
+git status
+
+git checkout -b feature
+
+touch fileA.txt
+touch fileB.txt
+ls
+
+git add .
+
+git commit -m "A file A B"
+
+git status
+
+git log
+git log --oneline
+git log --oneline --all
+
+git checkout main
+
+touch file3.txt
+
+git add .
+
+git commit -m "A file 3"
+
+git status
+
+git log
+git log --oneline
+
+git merge feature
